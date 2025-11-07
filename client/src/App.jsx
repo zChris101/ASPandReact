@@ -1,22 +1,26 @@
-import React from 'react'
-import About from './pages/About.jsx'
-import Home from './pages/Home.jsx'
-import Navbar from './components/Navbar.jsx'
-import Person from './pages/Person.jsx'
-import NotFound from './pages/NotFound.jsx'
-import { Route, Routes } from 'react-router'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import About from './pages/About'
+import NotFound from './pages/NotFound'
+import Person from './components/person/Person'
+import { Routes, Route } from "react-router";
+import { Toaster } from 'react-hot-toast';
+
 const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
 
       <Routes>
         <Route index element={<Home />} />
-        <Route path='about' element={<About />} />
-        <Route path='person' element={<Person />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path="about" element={<About />} />
+        <Route path="person" element={<Person />} />
+        <Route path="*" element={<NotFound />} />
+
       </Routes>
-    </div>
+
+      <Toaster />
+    </>
   )
 }
 
